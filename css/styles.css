@@ -1,0 +1,263 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* 💥 Centrado vertical */
+  align-items: center;      /* 💥 Centrado horizontal */
+
+  font-family: sans-serif;
+  text-align: center;
+
+  background: linear-gradient(
+      180deg,
+      #2A4364 0%,
+      rgba(57, 90, 122, 0.75) 25%,
+      rgba(68, 109, 139, 0.5) 50%,
+      rgba(78, 125, 154, 0.25) 75%,
+      rgba(93, 148, 176, 0) 100%
+    ),
+    #8BB5C0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+text-decoration: none;
+}
+
+/*logo*/ 
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* slogan */
+.slogan {
+  font-family: 'Mansalva', cursive !important;
+  display: flex;
+  flex-direction: column;  /* 💥 apila sloganDis y sloganDes */
+  align-items: center;
+  gap: 10px;
+  width: 376px;
+  filter: drop-shadow(0px 4px 4px rgba(80, 77, 77, 0.25));
+}
+
+/* Diseño con propósito */
+.sloganDis h2 {
+  
+  font-weight: 400;
+  font-size: 24px;
+  color: #2A4364;
+  margin: 0;
+}
+
+/* desarrollo con legado */
+.sloganDes {
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* 💥 en vez de align-content */
+
+  width: 267px;
+  height: 40px;
+  transform: rotate(-0.76deg);
+  background: linear-gradient(90deg, rgba(208, 174, 115, 0) 0%, #E4CDAD 10%, #E4CDAD 89.1%, rgba(208, 174, 115, 0) 100%);
+  border-radius: 5px;
+  margin-left: 70px;
+  margin-top: -5px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sloganDes h2 {
+  font-weight: 400;
+  font-size: 24px;
+  color: #2A4364;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+}
+
+
+/* dise */
+.sloganDis {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 70px;
+  width: 267px;
+  height: 40px;
+  background: linear-gradient(
+    90deg,
+    rgba(208, 174, 115, 0) 0%,
+    #E4CDAD 10%,
+    #E4CDAD 89.1%,
+    rgba(208, 174, 115, 0) 100%
+  );
+  border-radius: 5px;
+  transform: rotate(3.47deg);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  
+}
+
+/* Diseño con propósito */
+.sloganDis h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  color: #2A4364;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+  }
+
+
+  /* portfolio */
+ 
+.portfCont {
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Asegura alineación horizontal */
+  align-items: center; /* Centra verticalmente dentro del contenedor */
+  justify-content: space-between; /* Espacia los hijos, o usá "center" si querés que se junten */
+  margin-top: 30px;
+  width: 362px;
+  height: 132px;
+  background: linear-gradient(180deg, #8BB5C0 0%, #2A4364 100%);
+  border-radius: 15px;
+  overflow: hidden; /* para que los bordes no se salgan del borde redondeado */
+  border-image-slice: 1;
+}
+
+.portfCont:hover{
+  box-shadow: 0px 4px 4px #2A436480;
+  transition: 0.2s;
+}
+
+/* Borde superior e inferior con degradado */
+.portfCont::before,
+.portfCont::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(228, 205, 173, 0) 0%,
+    #D0AE73 50%,
+    rgba(228, 205, 173, 0) 100%
+  );
+  z-index: 1;
+}
+
+.portfCont::before {
+  top: 0; /* borde superior */
+}
+
+.portfCont::after {
+  bottom: 0; /* borde inferior */
+}
+
+
+.portfCont a {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: #E4CDAD;
+  
+  text-shadow: 2px 2px 4px #2A4364;
+
+}
+
+.portfCont.item {
+  flex: 1;
+  text-align: center;
+}
+
+.portfCont .item img {
+  margin-left: 20px;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+
+
+.contCont {
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Asegura alineación horizontal */
+  align-items: center; /* Centra verticalmente dentro del contenedor */
+  justify-content: space-between; /* Espacia los hijos, o usá "center" si querés que se junten */
+  margin-top: 30px;
+  width: 362px;
+  height: 132px;
+  background: linear-gradient(180deg, #D0AE73 0%, #E4CDAD 100%);
+  border-radius: 15px;
+  overflow: hidden; /* para que los bordes no se salgan del borde redondeado */
+  border-image-slice: 1;
+}
+
+.contCont:hover{
+  box-shadow: 0px 4px 4px #2A436480;
+  transition: 0.2s;
+}
+
+/* Borde superior e inferior con degradado */
+.contCont::before,
+.contCont::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(228, 205, 173, 0) 0%,
+    #2A4364 50%,
+    rgba(228, 205, 173, 0) 100%
+  );
+  z-index: 1;
+}
+
+.contCont::before {
+  top: 0; /* borde superior */
+}
+
+.contCont::after {
+  bottom: 0; /* borde inferior */
+}
+
+
+.contCont a {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: #2A4364;
+  
+  text-shadow: 2px 2px 4px #D0AE73;
+
+}
+
+.contCont .item {
+  flex: 2;
+  text-align: center;
+}
+
+.contCont .item img {
+  margin-right: 20px;
+  max-height: 110px;
+  object-fit: contain;
+}
