@@ -268,3 +268,10 @@ text-decoration: none;
   font-size: 20px;
   text-shadow: 2px 2px 2px #E4CDAD;
 }
+
+.socMedia {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+}
+
