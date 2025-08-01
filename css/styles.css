@@ -1,6 +1,9 @@
+          /** INDEX**/ 
+
+
 body {
   margin: 0;
-  padding: 0;
+  padding: 100px;
   min-height: 100vh;
 
   display: flex;
@@ -189,7 +192,7 @@ text-decoration: none;
   object-fit: contain;
 }
 
-
+/* Contacto */
 
 .contCont {
   position: relative;
@@ -275,3 +278,118 @@ text-decoration: none;
   gap: 120px;
 }
 
+
+
+       /** CONTACTO **/
+
+
+.cCont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* ya lo tenías, perfecto */
+  justify-content: flex-start; /* por si acaso */
+  width: 100%;
+  height: fit-content;
+  background: linear-gradient(180deg, #D0AE73 0%, #E4CDAD 100%);
+  border-radius: 50px;
+  padding: 50px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #2A4364;
+  text-shadow: 2px 2px 4px #D0AE73;
+  text-align: left; /* esto asegura que el texto no esté centrado */
+  overflow: hidden;
+  
+}
+
+
+/* Borde superior e inferior con degradado */
+.cCont::before,
+.cCont::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(228, 205, 173, 0) 0%,
+    #2A4364 50%,
+    rgba(228, 205, 173, 0) 100%
+  );
+  z-index: 1;
+}
+
+.cCont::before {
+  top: 0;
+}
+
+.cCont::after {
+  bottom: 0;
+}
+
+
+.cCont h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px; /* opcional, para separarlo del borde */
+  font-size: 40px;
+  text-shadow: #A87932 2px 2px 2px;
+}
+
+.cCont input[type="text"] {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+  
+  border-radius: 10px;
+  border: 1px solid #2A436480;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  background-color: #E4CDAD;
+}
+
+.cCont input[type="text"]:focus {
+  outline: none; /* elimina el contorno por defecto */
+  border: 1px solid #A87932; /* reemplaza por un borde personalizado */
+  box-shadow: 0 0 5px #A87932; /* opcional: agrega un brillo */
+  color: #2A4364 ;
+  transition: 0.2s ease;
+  
+}
+
+
+.cCont label{
+  
+  margin-top: 20px;
+  font-weight: 50;
+}
+
+.cCont #descripcion {
+  max-width: fit-content ;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #2A436480;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  background-color: #E4CDAD;
+  font-family:  sans-serif;
+}
+
+#descripcion:focus {
+  outline: none; /* elimina el contorno por defecto */
+  border: 1px solid #A87932; /* reemplaza por un borde personalizado */
+  box-shadow: 0 0 5px #A87932; /* opcional: agrega un brillo */
+  color: #2A4364 ;
+  transition: 0.2s ease;
+  font-family: sans-serif;
+  
+}
