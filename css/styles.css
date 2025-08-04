@@ -288,7 +288,7 @@ text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: start; /* ya lo tenías, perfecto */
-  justify-content: flex-start; /* por si acaso */
+  justify-content: center; /* por si acaso */
   width: 100%;
   height: fit-content;
   background: linear-gradient(180deg, #D0AE73 0%, #E4CDAD 100%);
@@ -371,14 +371,14 @@ text-decoration: none;
 }
 
 .cCont #descripcion {
-  max-width: fit-content ;
+ 
   margin-top: 10px;
   padding: 10px;
   font-size: 18px;
   border-radius: 10px;
   border: 1px solid #2A436480;
   width: 100%;
-  height: fit-content;
+  height: auto;
   box-sizing: border-box;
   background-color: #E4CDAD;
   font-family:  sans-serif;
@@ -392,4 +392,15 @@ text-decoration: none;
   transition: 0.2s ease;
   font-family: sans-serif;
   
+}
+
+
+textarea {
+  width: 100vw; /* 100% del ancho de la ventana */
+  height: 100vh; /* opcional: 100% del alto de la ventana */
+  box-sizing: border-box; /* incluye el padding y border en el tamaño total */
+  padding: 1rem; /* opcional: para que no quede pegado a los bordes */
+  font-size: 1rem; /* opcional: tamaño de texto */
+  resize: none; /* opcional: evita que se pueda redimensionar manualmente */
+  border: 1px solid #ccc; /* opcional: borde visible */
 }
