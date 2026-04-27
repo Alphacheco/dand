@@ -81,19 +81,41 @@ function HomePage() {
             <div className="feature-copy">
               <p className="eyebrow">Agenda abierta</p>
               <h2>Contacto</h2>
-            </div>
-            <div className="feature-media">
-              <img src="/img/contacto.svg" alt="Ilustración de contacto" />
-            </div>
-          </div>
-          <p>
+              <p>
             Cuéntanos lo que imaginas y aterrizamos una propuesta visual,
             técnica y estratégica para tu web.
           </p>
+            </div>
+            <div className="feature-media">
+              <img src="/img/contacto.svg" alt="Ilustración de contacto" className="contact-img-equal" />
+            </div>
+          </div>
+          
           <Link to="/contacto" className="text-link" aria-label="Abrir formulario de contacto">
             Ir al formulario
           </Link>
-        </article>
+        <div className="contact-social" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: '2rem', height: '80px' }}>
+          
+          <a
+            href="https://wa.me/5493435184749"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="social-btn whatsapp"
+          >
+            <img src="/img/wsp.svg" alt="WhatsApp" style={{ width: 48, height: 48 }} />
+          </a>
+          <a
+            href="mailto:jonarein@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Mail"
+            className="social-btn mail"
+          >
+            <img src="/img/gmail.svg" alt="Mail" style={{ width: 48, height: 48 }} />
+          </a>
+        </div>
+      </article>
       </section>
 
       
