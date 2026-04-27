@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function ContactPage() {
+  const [sent, setSent] = useState(false);
+
+  // Reemplaza este endpoint por el tuyo real de Formspree
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgaygzp";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+    if (res.ok) {
+      setSent(true);
+      form.reset();
+    } else {
+      alert("Hubo un error al enviar. Intenta de nuevo.");
+    }
+  };
+
   return (
     <main className="contact-page">
       <div className="ambient-overlay" aria-hidden="true">
@@ -26,69 +49,59 @@ function ContactPage() {
           </p>
         </div>
 
-        <form className="contact-form" action="#" method="post">
-          <label htmlFor="nombre">Nombre</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Ej: Juan Perez"
-          />
-
-
-          <label htmlFor="telefono">Teléfono</label>
-          <input
-            type="text"
-            id="telefono"
-            name="telefono"
-            placeholder="Ej: +5491112345678"
-          />
-
-          <label htmlFor="email">Correo electrónico</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Ej: correo@ejemplo.com"
-            autoComplete="email"
-          />
-
-          <label htmlFor="descripcion">Descripcion del proyecto</label>
-          <textarea
-            id="descripcion"
-            name="descripcion"
-            placeholder="Necesitamos un sitio con 3 secciones, una pagina principal, una de informacion institucional y una de contacto..."
-          />
-
-          <div className="contact-actions">
-            <button type="submit" className="btn btn-primary">
-              Enviar consulta
-            </button>
-            <Link to="/" className="btn btn-outline" aria-label="Regresar al inicio">
-              Volver al inicio
-            </Link>
+        {sent ? (
+          <div className="contact-success" style={{color: '#2563eb', fontWeight: 600, fontSize: '1.2rem', margin: '2rem 0'}}>
+            ¡Gracias por tu consulta! Te responderé pronto.
           </div>
-        </form>
-        <div className="contact-social">
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="social-btn instagram"
-          >
-            <img src="/img/logoIg.svg" alt="Instagram" style={{ width: 32, height: 32 }} />
-          </a>
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="social-btn facebook"
-          >
-            <img src="/img/logoFace.svg" alt="Facebook" style={{ width: 32, height: 32 }} />
-          </a>
-        </div>
+        ) : (
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <label htmlFor="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ej: Juan Perez"
+              required
+            />
+
+            <label htmlFor="telefono">Teléfono</label>
+            <input
+              type="text"
+              id="telefono"
+              name="telefono"
+              placeholder="Ej: +5491112345678"
+              required
+            />
+
+            <label htmlFor="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ej: correo@ejemplo.com"
+              autoComplete="email"
+              required
+            />
+
+            <label htmlFor="descripcion">Descripcion del proyecto</label>
+            <textarea
+              id="descripcion"
+              name="descripcion"
+              placeholder="Necesitamos un sitio con 3 secciones, una pagina principal, una de informacion institucional y una de contacto..."
+              required
+            />
+
+            <div className="contact-actions">
+              <button type="submit" className="btn btn-primary">
+                Enviar consulta
+              </button>
+              <Link to="/" className="btn btn-outline" aria-label="Regresar al inicio">
+                Volver al inicio
+              </Link>
+            </div>
+          </form>
+        )}
+        
       </section>
     </main>
   );

@@ -270,6 +270,8 @@ a {
   color: var(--text-dark);
   background: linear-gradient(160deg, rgba(255, 250, 245, 0.98), rgba(255, 230, 195, 0.96));
   border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 18px 18px 14px 18px;
+  border-radius: 14px;
 }
 
 .feature-copy h2 {
