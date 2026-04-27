@@ -24,7 +24,7 @@ function HomePage() {
       </header>
 
       <section className="hero fade-in-top">
-        <p className="hero-kicker">Estudio digital boutique</p>
+        <p className="hero-kicker">Estudio digital</p>
         <h1>
           Diseño con propósito,
           <span> desarrollo con legado.</span>
@@ -35,9 +35,7 @@ function HomePage() {
         </p>
 
         <div className="hero-actions">
-          <a href="#portfolio" className="btn btn-primary" aria-label="Ver portfolio">
-            Ver portfolio
-          </a>
+          
           <Link to="/contacto" className="btn btn-outline" aria-label="Ir a contacto">
             Empezar proyecto
           </Link>
