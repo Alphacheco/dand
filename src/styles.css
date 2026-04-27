@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  .feature-media img,
+  .contact-img-equal {
+    display: none !important;
+  }
+}
 .contact-img-equal {
   width: 140px;
   height: 140px;
