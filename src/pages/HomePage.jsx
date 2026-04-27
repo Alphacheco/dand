@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 
+const PORTFOLIO_CARDS = [
+  { name: "CajaJPER", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
+  { name: "LocoCaja", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
+  { name: "Portal Caja", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
+  { name: "Proyecto Caja", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
+];
+
 function HomePage() {
+  const carouselCards = [...PORTFOLIO_CARDS, ...PORTFOLIO_CARDS];
+
   return (
     <main className="home-page">
       <div className="ambient-overlay" aria-hidden="true">
@@ -50,6 +59,22 @@ function HomePage() {
             Experiencias que combinan branding, narrativa y producto digital
             para marcas con ambición.
           </p>
+          <div className="portfolio-carousel" aria-label="Carrusel de proyectos">
+            <div className="portfolio-track" style={{ "--card-count": carouselCards.length }}>
+              {carouselCards.map((card, index) => (
+                <a
+                  key={`${card.name}-${index}`}
+                  href={card.href}
+                  className="portfoliolink portfoliolink-card"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visitar ${card.name}`}
+                >
+                  <img src={card.logo} alt={`Logo ${card.name}`} />
+                </a>
+              ))}
+            </div>
+          </div>
         </article>
 
         <article className="feature-card feature-card-light">

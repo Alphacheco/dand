@@ -166,6 +166,10 @@ text-decoration: none;
 
 .portfCont a {
   margin-left: 15px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   font-family: 'Ubuntu', sans-serif;
@@ -184,8 +188,11 @@ text-decoration: none;
 }
 
 .portfCont .item img {
-  margin-left: 20px;
-  max-height: 110px;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  margin: 0;
+  max-height: 88px;
   object-fit: contain;
 }
 
@@ -239,6 +246,10 @@ text-decoration: none;
 
 .contCont a {
   margin-left: 15px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   font-family: 'Ubuntu', sans-serif;
@@ -257,7 +268,16 @@ text-decoration: none;
 }
 
 .contCont .item img {
-  margin-right: 20px;
-  max-height: 110px;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  margin: 0;
+  max-height: 88px;
   object-fit: contain;
+}
+
+.portfCont .item h1,
+.contCont .item h1 {
+  margin: 0;
+  padding-right: 120px;
 }

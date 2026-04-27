@@ -273,6 +273,69 @@ a {
   text-underline-offset: 4px;
 }
 
+.portfolio-brand-btn,
+.portfoliolink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(15, 23, 45, 0.18);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--text-dark);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.portfolio-brand-btn:hover,
+.portfoliolink:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: rgba(244, 164, 96, 0.45);
+}
+
+.portfolio-carousel {
+  margin-top: 12px;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+
+.portfolio-track {
+  --portfolio-gap: 12px;
+  display: flex;
+  gap: var(--portfolio-gap);
+  width: calc((((100% - (2 * var(--portfolio-gap))) / 3) * var(--card-count, 8)) + ((var(--card-count, 8) - 1) * var(--portfolio-gap)));
+  animation: portfolio-scroll 18s linear infinite;
+  will-change: transform;
+}
+
+.portfoliolink-card {
+  flex: 0 0 calc((100% - ((var(--card-count, 8) - 1) * var(--portfolio-gap))) / var(--card-count, 8));
+  min-height: 72px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.portfolio-brand-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.portfoliolink-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .home-footer {
   margin-top: 28px;
   padding: 20px 24px;
@@ -429,6 +492,16 @@ a {
   }
 }
 
+@keyframes portfolio-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (max-width: 920px) {
   .feature-grid,
   .contact-shell {
@@ -447,6 +520,7 @@ a {
     max-width: 120px;
     max-height: 120px;
   }
+
 }
 
 @media (max-width: 640px) {
@@ -468,4 +542,5 @@ a {
   .contact-form {
     padding: 16px;
   }
+
 }
