@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap");
 
 :root {
-  --bg-1: #0a0e1a;
-  --bg-2: #0f1729;
-  --bg-3: #142d42;
-  --surface-dark: rgba(10, 14, 26, 0.85);
-  --surface-light: rgba(255, 250, 245, 0.96);
-  --line-soft: rgba(255, 255, 255, 0.15);
-  --text-main: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.88);
-  --text-dark: #0f172d;
-  --accent: #f4a460;
-  --accent-2: #6dd5d5;
+  --bg-1: #181a20;
+  --bg-2: #23262f;
+  --bg-3: #31344b;
+  --surface-dark: rgba(24, 26, 32, 0.92);
+  --surface-light: rgba(255, 255, 255, 0.98);
+  --line-soft: rgba(60, 60, 60, 0.13);
+  --text-main: #f7f7fa;
+  --text-secondary: #b0b3c6;
+  --text-dark: #23262f;
+  --accent: #e2b76a;
+  --accent-2: #7ec6c6;
 }
 
 * {
@@ -31,11 +31,9 @@ body,
 body {
   margin: 0;
   color: var(--text-main);
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Poppins", Arial, sans-serif;
   background:
-    radial-gradient(circle at 8% 20%, rgba(244, 164, 96, 0.12), transparent 50%),
-    radial-gradient(circle at 92% 82%, rgba(109, 213, 213, 0.12), transparent 45%),
-    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 95%);
+    linear-gradient(120deg, var(--bg-1) 0%, var(--bg-2) 60%, var(--bg-3) 100%);
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -117,9 +115,28 @@ a {
   padding: clamp(28px, 5vw, 56px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(10, 14, 26, 0.78), rgba(12, 35, 60, 0.68));
+    position: relative;
+    background:
+      linear-gradient(to right, rgba(24,26,32,1) 0%, rgba(24,26,32,0.95) 20%, rgba(24,26,32,0.7) 60%, rgba(24,26,32,0.18) 95%, rgba(24,26,32,0.05) 100%);
+    overflow: hidden;
   backdrop-filter: blur(8px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('/img/fondo.png') left center/cover no-repeat;
+  opacity: 0.07;
+  pointer-events: none;
+  filter: brightness(0.9) grayscale(0.2);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-kicker,
@@ -166,30 +183,33 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  padding: 0 24px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  font-weight: 600;
-  font-size: 0.95rem;
+  padding: 0 28px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
   letter-spacing: 0.03em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 2px 12px rgba(34, 34, 34, 0.07);
+  transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1), background-color 0.18s cubic-bezier(.4,0,.2,1);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(34, 34, 34, 0.13);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #f4a460, #e8944a);
-  color: #0a0e1a;
-  box-shadow: 0 12px 28px rgba(244, 164, 96, 0.24);
-  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), #e2b76a 80%, #f7f7fa 100%);
+  color: #23262f;
+  box-shadow: 0 8px 24px rgba(226, 183, 106, 0.18);
+  border: none;
 }
 
 .btn-outline {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  font-weight: 700;
 }
 
 .feature-grid {
@@ -203,11 +223,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid transparent;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  padding: 32px 28px;
+  border-radius: 24px;
+  border: 1.5px solid var(--line-soft);
+  box-shadow: 0 8px 32px rgba(34, 34, 34, 0.10);
+  transition: transform 0.22s cubic-bezier(.4,0,.2,1), border-color 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s cubic-bezier(.4,0,.2,1);
 }
 
 .feature-card p {
@@ -222,9 +242,9 @@ a {
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 16px 48px rgba(226, 183, 106, 0.13);
 }
 
 .feature-card-dark {
@@ -316,7 +336,7 @@ a {
 .portfoliolink-card {
   flex: 0 0 calc((100% - ((var(--card-count, 8) - 1) * var(--portfolio-gap))) / var(--card-count, 8));
   min-height: 72px;
-  padding: 0;
+  padding: 5px;
   justify-content: center;
   border-radius: 14px;
   overflow: hidden;
@@ -423,15 +443,17 @@ a {
 }
 
 .contact-form input,
-.contact-form textarea {
+,.contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(15, 23, 45, 0.15);
-  border-radius: 12px;
-  padding: 12px 14px;
+  border: 1.5px solid var(--line-soft);
+  border-radius: 14px;
+  padding: 14px 16px;
   font: inherit;
-  font-size: 0.95rem;
-  color: #0f172d;
-  background: rgba(255, 255, 255, 0.94);
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  background: rgba(255,255,255,0.99);
+  box-shadow: 0 2px 8px rgba(34,34,34,0.04);
+  transition: border-color 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
 }
 
 .contact-form textarea {
@@ -441,10 +463,10 @@ a {
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+,.contact-form textarea:focus {
   outline: none;
-  border-color: #f4a460;
-  box-shadow: 0 0 0 3px rgba(244, 164, 96, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(226, 183, 106, 0.13);
 }
 
 .contact-actions {

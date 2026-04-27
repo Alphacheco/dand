@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const PORTFOLIO_CARDS = [
   { name: "CajaJPER", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
-  { name: "LocoCaja", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
-  { name: "Portal Caja", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
+  { name: "CER", href: "http://estudiocer.com.ar", logo: "/img/CER.svg" },
+  { name: "Reina", href: "http://reinaheels.vercel.app", logo: "/img/reina.svg" },
   { name: "Proyecto Caja", href: "http://cajajper.gov.ar", logo: "/img/logoCaja.svg" },
 ];
 
@@ -50,15 +50,16 @@ function HomePage() {
             <div className="feature-copy">
               <p className="eyebrow">Selección destacada</p>
               <h2>Portfolio</h2>
+              <p>
+                Experiencias que combinan branding, narrativa y producto digital
+                para marcas con ambición.
+              </p>
             </div>
             <div className="feature-media">
               <img src="/img/portfolio.png" alt="Preview de trabajos de portfolio" />
             </div>
           </div>
-          <p>
-            Experiencias que combinan branding, narrativa y producto digital
-            para marcas con ambición.
-          </p>
+
           <div className="portfolio-carousel" aria-label="Carrusel de proyectos">
             <div className="portfolio-track" style={{ "--card-count": carouselCards.length }}>
               {carouselCards.map((card, index) => (

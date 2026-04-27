@@ -35,12 +35,22 @@ function ContactPage() {
             placeholder="Ej: Juan Perez"
           />
 
-          <label htmlFor="telefono">Telefono</label>
+
+          <label htmlFor="telefono">Teléfono</label>
           <input
             type="text"
             id="telefono"
             name="telefono"
             placeholder="Ej: +5491112345678"
+          />
+
+          <label htmlFor="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ej: correo@ejemplo.com"
+            autoComplete="email"
           />
 
           <label htmlFor="descripcion">Descripcion del proyecto</label>
