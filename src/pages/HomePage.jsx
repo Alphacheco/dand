@@ -96,17 +96,7 @@ function HomePage() {
         </article>
       </section>
 
-      <footer className="home-footer fade-in-up">
-        <p>Creaciones a tu alcance</p>
-        <div className="social-media">
-          <a href="#" aria-label="Facebook">
-            <img src="/img/logoFace.svg" alt="Facebook" />
-          </a>
-          <a href="#" aria-label="Instagram">
-            <img src="/img/logoIg.svg" alt="Instagram" />
-          </a>
-        </div>
-      </footer>
+      
     </main>
   );
 }

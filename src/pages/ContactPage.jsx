@@ -69,6 +69,26 @@ function ContactPage() {
             </Link>
           </div>
         </form>
+        <div className="contact-social">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="social-btn instagram"
+          >
+            <img src="/img/logoIg.svg" alt="Instagram" style={{ width: 32, height: 32 }} />
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="social-btn facebook"
+          >
+            <img src="/img/logoFace.svg" alt="Facebook" style={{ width: 32, height: 32 }} />
+          </a>
+        </div>
       </section>
     </main>
   );
